@@ -8,7 +8,6 @@ using System.Linq;
 using System.Net;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Query;
-using CDR_API.Data;
 
 namespace CDR_API.Controllers
 {
