@@ -50,6 +50,7 @@ Takes 2 input dates, a caller_id and an optional type. Finds and returns records
 Takes 2 input dates, a caller_id, an integer n rows and an optional type. Finds and returns records matching the caller_id within the time period of the dates if they are within 31 days of each other. Does not return more records than the input n rows. Additionally filters by type if it is included.
 
 ## Future Considerations
+With more time I would have tried connecting to an Azure SQL database rather than a local one, as well as the putting the ASP.NET application as a whole on Azure.
 
 ## Important Files
 Controllers/CallController.cs:
