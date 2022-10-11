@@ -51,13 +51,24 @@ namespace CDR_API.Controllers
                 }
                 catch (Exception e)
                 {
-                    return BadRequest(new {error = "SQL error."});
+                    return BadRequest(new {message = "SQL error."});
                 }
             }
             else
             {
-                return BadRequest(new { error = "File not uploaded." });
+                return BadRequest(new { message = "File not uploaded." });
             }
+        }
+
+        //Endpoint to take a reference string and find the matching record.
+        [HttpGet("GetByReference")]
+        [ProducesResponseType(typeof(int), StatusCodes.Status200OK)] //Allows Swagger to display what a normal 200 response looks like.
+        [ProducesResponseType(typeof(int), StatusCodes.Status404NotFound)] //Same for 404 responses, which will be returned if no record matches the reference.
+        public async Task<IActionResult> GetByReference(string reference)
+        {
+            var call = await _context.Calls.FirstOrDefaultAsync(x => x.reference == reference); //Find the first matching record, comparing the reference
+            //Send 404 if no record found (null), send 200 with attached record if it is found.
+            return call == null ? NotFound(new { message = "No matching record." }) : Ok(call); 
         }
 
 
