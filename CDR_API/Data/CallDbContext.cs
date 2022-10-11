@@ -15,7 +15,7 @@ namespace CDR_API.Data
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
         {
-            configurationBuilder.Properties<decimal>().HavePrecision(18, 3);
+            configurationBuilder.Properties<decimal>().HavePrecision(18, 3); //set decimal scale to 3, the default of 2 is not enough
         }
 
 

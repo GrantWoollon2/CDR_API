@@ -109,7 +109,7 @@ namespace CDR_API.Controllers
         public async Task<IActionResult> GetCallsByCallerID(DateTime earlyDate, DateTime laterDate, String caller_id, int type)
         {
             //return error if difference in dates is more than 31 days.
-            if (laterDate.Subtract(earlyDate).Days > 31) { return BadRequest(); }
+            if (laterDate.Subtract(earlyDate).Days > 31) { return BadRequest(new { message = "Time period must not be more than 1 month." }); }
 
             List<Call> calls = null;
             if (type > 0)
@@ -132,7 +132,7 @@ namespace CDR_API.Controllers
         public async Task<IActionResult> GetMostExpensiveCallsByCallerID(DateTime earlyDate, DateTime laterDate, String caller_id, int rows, int type)
         {
             //return error if difference in dates is more than 31 days.
-            if (laterDate.Subtract(earlyDate).Days > 31) { return BadRequest(); }
+            if (laterDate.Subtract(earlyDate).Days > 31) { return BadRequest(new { message = "Time period must not be more than 1 month." }); }
 
             List<Call> calls = null;
             if (type > 0)
