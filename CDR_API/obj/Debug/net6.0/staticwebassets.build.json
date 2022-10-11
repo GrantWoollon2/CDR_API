@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "kmdlldJsu2A+XYyJUzXN/IcWHFQR4EQcokWvgjhrLdg=",
+  "Source": "CDR_API",
+  "BasePath": "_content/CDR_API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
