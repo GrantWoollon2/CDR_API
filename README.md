@@ -53,7 +53,7 @@ Takes 2 input dates, a caller_id, an integer n rows and an optional type. Finds 
 With more time I would have tried connecting to an Azure SQL database rather than a local one, as well as the putting the ASP.NET application as a whole on Azure.
 
 ## Important Files
-Controllers/CallController.cs:
+#### Controllers/CallController.cs:
 In the MVC pattern, this is the controller which defines the API endpoints and their inputs. It takes input from users, queries the Calls table in the database and returns a result.
 
 #### Models/Call.cs:
