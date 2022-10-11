@@ -17,14 +17,19 @@ Visual Studio Community should be used to open the .sln file.
 
 Under View -> Server Explorer, click Connect to Database and add a Microsoft SQL Server data source, and enter the server name. You can create a new database name e.g. “CDR” that the Calls table will be created under.
 
-Install the Nuget Packages:
+#### Install the Nuget Packages:
+
 System.Data.SqlClient
+
 Microsoft.EntityFrameworkCore.SqlServer
+
 Microsoft.EntityFrameworkCore.Tools
 
-Create the Table:
-(In Nuget Package Manager Console)
+
+#### Create the Table (In Nuget Package Manager Console):
+
 Add-Migration createdatabase -o Data/Migrations
+
 Update-Database
 
 The application should now run. It will open a web server and a browser frontend interface created with Swagger that will allow you to communicate with the endpoints.
