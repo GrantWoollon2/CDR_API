@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CDR_API.Data.Migrations
 {
     [DbContext(typeof(CallDbContext))]
-    [Migration("20221011190404_createdatabase")]
+    [Migration("20221011195419_createdatabase")]
     partial class createdatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,7 +40,8 @@ namespace CDR_API.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("cost")
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(18, 3)
+                        .HasColumnType("decimal(18,3)");
 
                     b.Property<string>("currency")
                         .IsRequired()

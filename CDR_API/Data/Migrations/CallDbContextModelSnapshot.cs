@@ -38,7 +38,8 @@ namespace CDR_API.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("cost")
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(18, 3)
+                        .HasColumnType("decimal(18,3)");
 
                     b.Property<string>("currency")
                         .IsRequired()

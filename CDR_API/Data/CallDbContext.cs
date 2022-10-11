@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using CDR_API.Models;
 
+
 namespace CDR_API.Data
 {
     public class CallDbContext : DbContext
@@ -11,6 +12,11 @@ namespace CDR_API.Data
         { }
 
         public DbSet<Call> Calls { get; set; }
+
+        protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+        {
+            configurationBuilder.Properties<decimal>().HavePrecision(18, 3);
+        }
 
 
     }

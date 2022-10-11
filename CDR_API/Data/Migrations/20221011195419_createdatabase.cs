@@ -20,7 +20,7 @@ namespace CDR_API.Data.Migrations
                     call_date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     end_time = table.Column<DateTime>(type: "datetime2", nullable: false),
                     duration = table.Column<int>(type: "int", nullable: false),
-                    cost = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    cost = table.Column<decimal>(type: "decimal(18,3)", precision: 18, scale: 3, nullable: false),
                     reference = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     currency = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     type = table.Column<int>(type: "int", nullable: false)
